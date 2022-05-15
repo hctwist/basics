@@ -3,17 +3,17 @@ package uk.henrytwist.kotlinbasics.outcomes
 /* Creation */
 
 /**
- * Creates a waiting outcome.
+ * Creates a [Outcome.Pending] outcome.
  */
-fun waiting() = Outcome.Waiting
+fun pending() = Outcome.Pending
 
 /**
- * Creates a failure outcome.
+ * Creates a [Outcome.Failure] outcome.
  */
 fun failure() = Outcome.Failure()
 
 /**
- * Creates a successful outcome with this data.
+ * Creates an [Outcome.Success] outcome with this data.
  */
 fun <T> T.asSuccess() = Outcome.Success(this)
 
