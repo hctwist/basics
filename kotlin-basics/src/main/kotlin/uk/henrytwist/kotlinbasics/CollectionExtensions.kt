@@ -5,7 +5,3 @@ package uk.henrytwist.kotlinbasics
  * @see indexOfFirst
  */
 inline fun <T> Iterable<T>.indexOfFirstOrNull(predicate: (T) -> Boolean) = indexOfFirst(predicate).takeIf { it >= 0 }
-
-fun testLib(): Int {
-    return 5;
-}
