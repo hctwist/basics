@@ -30,10 +30,10 @@ fun <T> Outcome<T>?.successOrNull() = if (this is Outcome.Success) data else nul
  * If this outcome is not a [Outcome.Failure] then it will not be switched.
  */
 inline fun <T> Outcome<T>.switchFailure(transform: () -> Outcome<T>): Outcome<T> {
-    return if (this is Outcome.Success) this else transform()
+    return if (this is Outcome.Failure) transform() else this
 }
 
 /**
  * Maps each element in a successful outcome via [transform].
  */
-fun <T, O> Outcome<Iterable<T>>.mapEach(transform: (T) -> O) = map { it.map(transform) }
+inline fun <T, O> Outcome<Iterable<T>>.mapEach(transform: (T) -> O) = map { it.map(transform) }
