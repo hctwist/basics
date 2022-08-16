@@ -24,4 +24,11 @@ sealed class Delayed<out T> {
             is Completed -> Completed(transform(data))
         }
     }
+
+    /**
+     * Performs an action if the delayed is completed.
+     */
+    inline fun ifCompleted(then: (T) -> Unit) {
+        if (this is Completed) then(data)
+    }
 }
