@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "uk.henrytwist.basics"
-version = "1.1.2"
+version = "1.1.4"
 
 publishing {
     publications {
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
     testImplementation(kotlin("test"))
 }
